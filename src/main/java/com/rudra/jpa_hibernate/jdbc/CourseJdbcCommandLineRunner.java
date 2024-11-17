@@ -5,11 +5,15 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.rudra.jpa_hibernate.jpa.CourseRepository;
+import com.rudra.jpa_hibernate.jpa.CourseSpringDataJpaRepository;
 import com.rudra.jpa_hibernate.model.Course;
 
 @Component
 public class CourseJdbcCommandLineRunner implements CommandLineRunner{
-
+	
+	@Autowired
+	private CourseSpringDataJpaRepository courseSpringDataRepo;
+	
 	@Autowired
 	private CourseJdbcRepository repository;
 	
@@ -33,6 +37,11 @@ public class CourseJdbcCommandLineRunner implements CommandLineRunner{
 		rpc.insert(new Course(12, "Learn JPA1", "RudraComputer"));
 		rpc.insert(new Course(13, "Learn JPA2", "RudraComputer"));
 		
+		
+		courseSpringDataRepo.save(new Course(21, "Learn AWS now", "Vipan Kumar"));
+		courseSpringDataRepo.save(new Course(22, "Learn Azure now", "Vipan Kumar"));
+		courseSpringDataRepo.save(new Course(23, "Learn Java now", "Vipan Kumar"));
+		courseSpringDataRepo.save(new Course(24, "Learn PHP	 now", "Vipan Kumar"));
 	}	
 
 }
