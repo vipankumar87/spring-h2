@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import com.rudra.jpa_hibernate.model.Course;
+
 @Component
 public class CourseJdbcCommandLineRunner implements CommandLineRunner{
 
@@ -12,7 +14,14 @@ public class CourseJdbcCommandLineRunner implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		repository.insert();
-	}
+		repository.insert(new Course(1, "Learn AWS now", "Vipan Kumar"));
+		repository.insert(new Course(2, "Learn Azure now", "Vipan Kumar"));
+		repository.insert(new Course(3, "Learn Java now", "Vipan Kumar"));
+		repository.insert(new Course(4, "Learn PHP	 now", "Vipan Kumar"));
+		
+		repository.delete(1);
+		
+		System.out.println(repository.findById(2));
+	}	
 
 }
