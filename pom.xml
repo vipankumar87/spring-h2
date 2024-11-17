@@ -12,6 +12,7 @@
 	<artifactId>jpa-hibernate</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>jpa-hibernate</name>
+	<packaging>war</packaging>
 	<description>H2 Hibernate  project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -22,7 +23,7 @@
 	</developers>
 	<scm>
 		<connection/>
-		<developerConnection/>
+		<developerConnection>Vipan Kumar</developerConnection>
 		<tag/>
 		<url/>
 	</scm>
@@ -32,15 +33,15 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jdbc</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 		<dependency>
@@ -70,4 +71,8 @@
 		</plugins>
 	</build>
 
+	<organization>
+		<name>Rudra Computer</name>
+		<url>https://www.rudracomputer.com/</url>
+	</organization>
 </project>
